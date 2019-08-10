@@ -5,6 +5,7 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        tags={"@storemanager or @negative"},
         features = {
                 "src/test/resources/features"
         },
