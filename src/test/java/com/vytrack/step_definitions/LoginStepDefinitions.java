@@ -35,6 +35,20 @@ public class LoginStepDefinitions {
         Assert.assertEquals(string, pages.loginPage().getErrorMessage());
 
     }
+
+    @Then("user logs in as a driver")
+    public void user_logs_in_as_a_driver() {
+        String username = ConfigurationReader.getProperty("driverusername");
+        String password = ConfigurationReader.getProperty("driverpassword");
+        pages.loginPage().login(username, password);
+    }
+
+    @When("user logs in as a {string}")
+    public void user_logs_in_as_a(String role) {
+        pages.loginPage().login(role);
+    }
+
+
     //this is temporary solution until we start using hooks
     @Then("user quits")
     public void user_quits() {

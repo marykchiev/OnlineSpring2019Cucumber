@@ -5,7 +5,10 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags={"@storemanager or @negative"},
+        plugin={
+                "html:target/default-cucumber-reports"
+        },
+        tags={"@vehicles"},
         features = {
                 "src/test/resources/features"
         },
