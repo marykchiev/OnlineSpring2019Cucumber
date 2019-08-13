@@ -22,6 +22,8 @@ public abstract class BasePage {
     @FindBy(css = "h1[class='oro-subtitle']")
     protected WebElement pageSubTitle;
 
+    @FindBy(css = "h5[class='user-fieldset']")
+    protected WebElement h5SubTitle;
 
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -36,6 +38,13 @@ public abstract class BasePage {
         waitUntilLoaderScreenDisappear();
         BrowserUtils.waitForStaleElement(pageSubTitle);
         return pageSubTitle.getText();
+    }
+
+    public String getPageH5SubTitle() {
+        //ant time we are verifying page name, or page subtitle, loader mask appears
+        waitUntilLoaderScreenDisappear();
+        BrowserUtils.waitForStaleElement(h5SubTitle);
+        return h5SubTitle.getText();
     }
 
 

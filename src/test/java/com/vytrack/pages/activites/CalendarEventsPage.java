@@ -19,6 +19,10 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class CalendarEventsPage extends BasePage {
+
+    @FindBy(xpath ="//input[@id='oro_calendar_event_form_title-uid-5d51c6f5c292b']")
+    public WebElement eventTitle;
+
     @FindBy(css = "[title='Create Calendar event']")
     public WebElement createCalendarEventBtn;
 
@@ -202,6 +206,10 @@ public class CalendarEventsPage extends BasePage {
         BrowserUtils.waitForStaleElement(createCalendarEventBtn);
         BrowserUtils.waitForClickablility(createCalendarEventBtn, Integer.valueOf(ConfigurationReader.getProperty("SHORT_WAIT")));
         createCalendarEventBtn.click();
+    }
+
+    public void createEvent(String eventTitle){
+
     }
 
     public String getStartDate() {

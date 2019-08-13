@@ -14,4 +14,18 @@ public class VehiclesStepDefinitions {
 
     }
 
+    @Then("user clicks any car from list")
+    public void user_clicks_any_car_from_list() throws InterruptedException {
+        Thread.sleep(4000);
+        pages.vehiclesPage().vehicle1.click();
+
+    }
+
+    @Then("user verifies that {string} page is displayed")
+    public void user_verifies_that_page_is_displayed(String string) throws InterruptedException {
+        Thread.sleep(4000);
+        Assert.assertEquals(string, pages.vehiclesPage().getPageH5SubTitle());
+
+    }
+
 }

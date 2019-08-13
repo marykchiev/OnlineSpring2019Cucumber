@@ -4,7 +4,7 @@ Feature: As user I want to login under different roles
   Scenario: Login as a store manager
     Given user is on the landing page
     Then user logs in as a store manager
-    And user verifies that "Dashboards" page name is displayed
+    And user verifies that "Dashboard" page name is displayed
 
   @negative
     Scenario: Verify warning message for invalid credentials
