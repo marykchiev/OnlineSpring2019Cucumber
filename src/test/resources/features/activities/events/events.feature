@@ -6,4 +6,6 @@ Feature: Events
     When user logs in as a "driver"
     Then user clicks "Activities" in top menu and "Calendar Events" from drop down menu
     Then user clicks Create Calendar Event button
+    Then user enters event info and dates
+    And user clicks Create button
 

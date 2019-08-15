@@ -5,10 +5,11 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin={
+        plugin = {
+                "json:target/cucumber.json",
                 "html:target/default-cucumber-reports"
         },
-        tags={"@vehicles"},
+        tags={"@VYT4121"},
         features = {
                 "src/test/resources/features"
         },
